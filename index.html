@@ -3,45 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script Loader</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #282c34;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        pre {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 8px;
-            overflow: auto;
-            max-width: 90%;
-            max-height: 80%;
-            white-space: pre-wrap;
-        }
-    </style>
+    <title>loader</title>
 </head>
 <body>
-    <pre id="scriptContent">Loading script...</pre>
-
-    <script>
-        async function fetchScript() {
-            const url = "https://raw.githubusercontent.com/fentfeen/ficsh/refs/heads/main/hub";
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error("Failed to fetch the script");
-                const script = await response.text();
-                document.getElementById('scriptContent').textContent = script;
-            } catch (error) {
-                document.getElementById('scriptContent').textContent = `Error: ${error.message}`;
-            }
-        }
-        fetchScript();
-    </script>
+    <pre>
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fentfeen/ficsh/refs/heads/main/loader"))()
+    </pre>
 </body>
 </html>
